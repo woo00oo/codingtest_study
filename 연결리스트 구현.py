@@ -36,7 +36,7 @@ class NodeMgn:
                 if node.next.data == data:
                     temp = node.next
                     node.next = node.next.next
-                    del temp
+                    del temp 
                     return
                 else:
                     node = node.next
