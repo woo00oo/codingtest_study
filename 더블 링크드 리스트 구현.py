@@ -60,7 +60,7 @@ class NodeMgmt :
             return True
         else:
             node = self.tail
-            while node.data != before_data: #특정 데이터를 찾음
+            while node.data != before_data: #특정 데이터를 찾음 (링크드 리스트의 데이터가 before_data랑 같을 경우 반복문을 빠져나옴)
                 node = node.prev
                 if node == None:
                     return False
