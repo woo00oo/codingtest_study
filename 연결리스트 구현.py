@@ -41,6 +41,13 @@ class NodeMgn:
                 else:
                     node = node.next
 
+    def search_node(self,data):
+        node = self.head
+        while node:
+            if node.data == data:
+                return node
+            else:
+                node = node.next
 
 
 linkedlist1 = NodeMgn(0)
