@@ -53,7 +53,7 @@ class NodeMgmt :
             else:
                 node = node.prev
         return False
-
+#
     def insert_before(self,data,before_data):
         if self.head == None: #링크드 리스트가 비어있을 경우 맨 처음에 데이터 삽
             self.head = Node(data)
