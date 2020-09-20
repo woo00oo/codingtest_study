@@ -1,7 +1,12 @@
+import hashlib
+
 hash_table = list([i for i in range(8)])
 
 def get_key(data):
-    return hash(data)
+    hash_object = hashlib.sha256()
+    hash_object.update(data.encode()) #받은 데이터를 인코딩(바이트로 바꿔줌)
+    hex_dig = hash_object.hexdigest() #16진수로 변환
+    return int(hex_dig,16)
 
 def hash_function(key):
     return key % 8
