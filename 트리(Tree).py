@@ -53,7 +53,7 @@ class NodeMgmt:
         if searched == False:
             return False
 
-        #case1 : 삭제할 노드가 단말 노드일 경우
+        ######case1 : 삭제할 노드가 단말 노드일 경우
         if self.current_node.left == None and self.current_node.right == None:
             if value <self.parent.value:
                 self.parent.left = None
@@ -61,7 +61,7 @@ class NodeMgmt:
                 self.parent.right = None
             del self.current_node
 
-        #case2 : 삭제할 Node가 자식노드를 한 개 가지고 있을 경우
+        #####case2 : 삭제할 Node가 자식노드를 한 개 가지고 있을 경우
 
         #삭제할 노드의 자식노드가 왼쪽에 있을 경우
         if self.current_node.left != None and self.current_node.right == None:
@@ -76,3 +76,34 @@ class NodeMgmt:
                 self.parent.left = self.current_node.right
             else:
                 self.parent.right = self.current_node.right
+
+        #####case3 : 삭제할 Node가 자식노드를 2개 가지고 있을 경우
+        if self.current_node.left != None and self.current_node.right != None:
+            #삭제할 노드가 부모노드의 왼쪽에 있을 경우
+            if value < self.parent.value:
+                self.change_node = self.current_node.right
+                self.change_node_parent = self.current_node.right
+                while self.change_node.left != None:
+                    self.change_node_parent = self.current_node
+                    self.change_node = self.change_node.left
+                if self.change_node.right != None:
+                    self.change_node_parent.left = self.change_node.right
+                else:
+                    self.change_node_parent.left = None
+                self.parent.left = self.change_node
+                self.change_node.right = self.current_node.right
+                self.current_node.left = self.change_node.left
+            #삭제할 노드가 부모노드의 오른쪽에 있을 경우
+            else:
+                self.change_node = self.current_node.right
+                self.change_node_parent = self.current_node.right
+                while self.change_node.left != None:
+                    self.change_node_parent = self.change_node
+                    self.change_node = self.current_node.left
+                if self.change_node.right != None:
+                    self.change_node_parent.left = self.change_node.right
+                else:
+                    self.change_node_parent.left = None
+                self.parent.right = self.change_node
+                self.change_node.left = self.current_node.left
+                self.change_node.right = self.current_node.right
