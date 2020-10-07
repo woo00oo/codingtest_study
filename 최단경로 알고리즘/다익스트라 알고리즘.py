@@ -13,7 +13,6 @@ def dijkstra(graph,start):
 
     distances = {node: float('inf')for node in graph}  #거리저장 배열 (시작 노드를 제외한 모든 노드까지의 거리를 무한대로 초기화)
     distances[start] = 0
-    print(distances)
     queue = [] #우선순위 큐
     heapq.heappush(queue,[distances[start],start])
 
