@@ -32,4 +32,3 @@ def dijkstra(graph,start):
     return distances
 
 print(dijkstra(mygraph,'A'))
-print(mygraph['A'])
