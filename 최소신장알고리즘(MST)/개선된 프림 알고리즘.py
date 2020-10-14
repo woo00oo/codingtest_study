@@ -23,7 +23,7 @@ def prim(graph, start):
         current_node, current_key = keys.popitem()
         mst.append([pi[current_node], current_node, current_key])
         total_weight += current_key
-        for adjacent, weight in mygraph[current_node].items():
+        for adjacent, weight in graph[current_node].items():
             if adjacent in keys and weight < keys[adjacent]:
                 keys[adjacent] = weight
                 pi[adjacent] = current_node
