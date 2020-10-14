@@ -31,7 +31,6 @@ def prim(start_node, edges):
     for weight, n1, n2 in edges:
         adjacent_edges[n1].append((weight,n1,n2))
         adjacent_edges[n2].append((weight,n2,n1))
-
     connected_nodes = set(start_node)
     candidate_edge_list = adjacent_edges[start_node]
     heapify(candidate_edge_list)
