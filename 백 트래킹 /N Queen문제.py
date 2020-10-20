@@ -1,12 +1,10 @@
+#수직체크 , 대각선 체크를 하는 함
 def is_available(candidate, current_col):
     current_row = len(candidate)
     for queen_row in range(current_row):
         if candidate[queen_row] == current_col or abs(candidate[queen_row]-current_col)==current_row-queen_row:
             return False
     return True
-
-
-
 
 #current_candidate => 이전 행까지의 퀸 위치 정보를 담는 변수
 def DFS(N,current_row, current_candidate, final_result):
@@ -19,7 +17,6 @@ def DFS(N,current_row, current_candidate, final_result):
             current_candidate.append(candidate_col)
             DFS(N,current_row+1,current_candidate,final_result)
             current_candidate.pop()
-
 
 def solve_n_queens(N):
     final_result = []
