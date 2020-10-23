@@ -92,7 +92,7 @@ class NodeMgmt:
                     self.change_node_parent.left = None
                 self.parent.left = self.change_node
                 self.change_node.right = self.current_node.right
-                self.current_node.left = self.change_node.left
+                self.change_node.left = self.current_node.left
             #삭제할 노드가 부모노드의 오른쪽에 있을 경우
             else:
                 self.change_node = self.current_node.right
