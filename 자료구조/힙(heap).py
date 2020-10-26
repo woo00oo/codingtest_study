@@ -1,7 +1,7 @@
 class Heap:
     def __init__(self,data):
         self.heap_array = list()
-        self.heap_array.append(None)
+        self.heap_array.append(None)    #root노드 인덱스 번호를 1로 지정
         self.heap_array.append(data)
 
     def move_up(self,inserted_idx):
@@ -90,8 +90,6 @@ class Heap:
                         poped_idx = right_child_popped_idx
 
         return returned_data
-
-
 
 
 
