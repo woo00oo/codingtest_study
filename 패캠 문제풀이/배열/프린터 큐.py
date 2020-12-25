@@ -18,7 +18,3 @@ for index in range(0,testNumber):
                 queue.pop(0)
         else:
             queue.append(queue.pop(0))
-
-
-
-
