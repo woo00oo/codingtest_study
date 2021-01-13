@@ -7,7 +7,7 @@ else:
         number_1 = i % 10
         number_10 = (i // 10) % 10
         number_100 = (i // 100) % 10
-        if 2*number_10 == number_1 + number_100:
+        if number_100-number_10 == number_10 - number_1:
             count += 1
     if number == 1000:
         count -=1
