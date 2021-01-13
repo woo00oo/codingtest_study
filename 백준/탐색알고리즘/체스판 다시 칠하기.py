@@ -15,9 +15,6 @@
 # 행 인덱스 짝수 and 열  인덱스 홀수 면  ==> W
 
 
-import sys
-
-
 def check_BW(matrix):
     case1_not_match = 0
     case2_not_match = 0
@@ -49,9 +46,9 @@ def check_BW(matrix):
 
 def solution():
     input_list = []
-    N, M = map(int, sys.stdin.readline().split())
+    N, M = list(map(int,input().split()))
     for idx in range(N):
-        input_list.append([i for i in sys.stdin.readline()][:-1])
+        input_list.append(list(input()))
 
     min_revise_cnt = 9999999999999999999
 
