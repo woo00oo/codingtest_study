@@ -49,14 +49,14 @@ def check_BW(matrix):
 
 def solution():
     input_list = []
-    M, N = map(int, sys.stdin.readline().split())
-    for idx in range(M):
+    N, M = map(int, sys.stdin.readline().split())
+    for idx in range(N):
         input_list.append([i for i in sys.stdin.readline()][:-1])
 
     min_revise_cnt = 9999999999999999999
 
-    for row in range(M - 7):
-        for col in range(N - 7):
+    for row in range(N - 7):
+        for col in range(M - 7):
             # 8*8 매트릭스로 자르기
             slice_mat = [one_row[col:col + 8] for one_row in input_list[row:row + 8]]
             revise_cnt = check_BW(slice_mat)
