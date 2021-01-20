@@ -13,7 +13,7 @@ for n in N_list:
     end = M-1
 
     while start <= end:
-        mid = start + end // 2
+        mid = (start + end) // 2
 
         if M_list[mid] == n:
             print(M_list[mid])
