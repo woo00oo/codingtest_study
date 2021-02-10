@@ -19,10 +19,11 @@ for _ in range(t):
 
         for j in range(3):
             test[j] = int(test[j])
-            if j == num[i].index(test[j]):
-                s_cnt += 1
-            else:
-                b_cnt += 1
+            if test[j] in num[i]:
+                if j == num[i].index(test[j]):
+                    s_cnt += 1
+                else:
+                    b_cnt += 1
 
         if s_cnt != s or b_cnt != b:
             num.remove(num[i])
