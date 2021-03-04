@@ -23,7 +23,7 @@ answer = 0
 cnt = 1
 for i in range(N):
     if cnt<3:
-        sum += li[i]
+        answer += li[i]
         cnt += 1
     else:
         cnt = 1
