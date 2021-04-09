@@ -13,3 +13,5 @@ def solution(n, m):
     return [gcd(n, m), n * m / gcd(n, m)]
 
 
+# import math 라이브러리 활용
+# math.gcd -> 최대 공약수를 구해주는 메소드
