@@ -26,7 +26,6 @@ def solution(orders, course):
             temp += combi
 
         counter = Counter(temp)
-        print(counter.values())
         if len(counter) != 0 and max(counter.values()) != 1:
             answer += [''.join(f) for f in counter if counter[f] == max(counter.values())]
 
