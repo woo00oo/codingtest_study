@@ -1,4 +1,5 @@
-# 리스트를 활용하면 시간 초과
+# pop(0) 의 시간복잡도 -> O(N)
+# popleft() 의 시간복잡도 -> O(1)
 
 
 from collections import deque
