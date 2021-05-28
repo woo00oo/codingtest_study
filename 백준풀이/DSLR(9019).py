@@ -32,4 +32,4 @@ def bfs(start, end):
 T = int(input())
 for _ in range(T):
     A, B = map(int, input().split())
-print(bfs(A, B))
+    print(bfs(A, B))
