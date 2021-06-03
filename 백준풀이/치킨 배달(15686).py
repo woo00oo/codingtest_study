@@ -1,18 +1,17 @@
-# 첫번째 시도 : 중복된 값을 고려하지 않음.
+# 귀찮더라도 예제 입력을 모두 확인해보면 고려하지 못했던 힌트를 얻어 시간을 단축 시킬 수 있으니 예제 입력을 모두 확인해보는 습관을 가지자!!
+
+from itertools import combinations
 
 def distance(homes, stores):
     chicken_distance = 0
     for home in homes:
         dis = float('inf')
-        best_store = 0
         for i in range(len(stores)):
-            d = abs(home[0]-stores[i][1][0]) + abs(home[1]-stores[i][1][1])
+            d = abs(home[0]-stores[i][0]) + abs(home[1]-stores[i][1])
             if dis > d:
                 dis = d
-                best_store = i
 
         chicken_distance += dis
-        stores[best_store][0] += 1
 
     return chicken_distance
 
@@ -28,15 +27,17 @@ for i in range(N):
         if myMap[i][j] == 1:
             homes.append((i+1, j+1))
         elif myMap[i][j] == 2:
-            stores.append([0, (i+1, j+1)])
+            stores.append((i+1, j+1))
 
-answer = distance(homes, stores)
 if M == len(stores):
-    print(answer)
+    print(distance(homes, stores))
 else:
-    stores.sort(key=lambda x: x[0], reverse=True)
-    new_stores = stores[:M]
-    answer = distance(homes, new_stores)
+    new_stores = list(combinations(stores, M))
+    answer = float('inf')
+    for i in range(len(new_stores)):
+        dis = distance(homes, new_stores[i])
+        if answer > dis:
+            answer = dis
     print(answer)
 
 
