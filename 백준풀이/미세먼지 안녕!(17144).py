@@ -68,7 +68,7 @@ clean()
 
 # T - 1번 시행
 for time in range(T-1):
-    myMap = myMap2.copy()
+    myMap = myMap2.copy() # 리스트 = 리스트로 선언을 하면 복사가 아니라 참조가 되어 한곳에서 변경을 하면 다른곳도 변경이 동시에 됨
     myMap2 = [[0] * C for _ in range(R)]
     spread()
     clean()
