@@ -4,7 +4,7 @@ t = int(input())
 
 def check():
     for i in range(len(numbers) - 1):
-        if numbers[i] in numbers[i + 1][0:len(numbers[i])]:
+        if numbers[i] == numbers[i + 1][0:len(numbers[i])]:
             print('NO')
             return
     print('YES')
