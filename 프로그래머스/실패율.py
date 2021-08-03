@@ -13,3 +13,15 @@ def solution(N, stages):
             dic[i] = 0
 
     return sorted(dic, key=lambda x: dic[x], reverse=True)
+
+
+'''
+추가 정리:
+    딕셔너리도 정렬이 된다.
+    sorted(dict) => key를 오름차순으로 정렬한 key 리스트를 반환
+    
+    sorted(dict, key=lambda x:dict[x]) => value값을 기준으로 정렬한 key리스트를 반환(value가 같으면 key기준 정렬)
+
+
+
+'''
