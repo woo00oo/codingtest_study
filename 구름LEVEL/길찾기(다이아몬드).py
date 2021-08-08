@@ -4,8 +4,6 @@ dp = []
 for i in range(height):
     dp.append(list(map(int, input().split())))
 
-print(dp)
-
 for i in range(1, height//2+1):
     for j in range(len(dp[i])):
         if j == 0:
