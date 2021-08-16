@@ -9,3 +9,4 @@ if __name__ == '__main__':
             break
         else:
             arr.pop()
+# 키 체인 테스트
